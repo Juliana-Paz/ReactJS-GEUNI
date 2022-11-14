@@ -1,6 +1,6 @@
 # GEUNI - Sistema de Gerenciamento de Eventos Acadêmicos
 
-Este é um projeto de **Gerenciamento de Eventos Acadêmicos** desenvolvido para a disciplina de **Projeto Integrador** da Universidade Estadual do Tocantins - UNITINS.
+Este é um projeto de **Gerenciamento de Eventos Acadêmicos** desenvolvido para a disciplina de **Projeto Integrador** da Universidade Estadual do Tocantins - UNITINS. Link da Aplicação: [https://geuni-eosin.vercel.app/](https://geuni-eosin.vercel.app/)
 
 ## Tecnologias utilizadas no projeto:
 ### Front-End:
