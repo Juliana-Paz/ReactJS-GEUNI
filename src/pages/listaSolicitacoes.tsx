@@ -1,5 +1,12 @@
 import {
   Flex,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
   Table,
   TableContainer,
   Tbody,
@@ -7,12 +14,15 @@ import {
   Th,
   Thead,
   Tr,
+  useDisclosure,
+  Button,
 } from "@chakra-ui/react";
 import {
   AiOutlineCheckCircle,
   AiOutlineCloseCircle,
   AiOutlineEye,
 } from "react-icons/ai";
+import ModalSolicitacao from "../components/ModalSolicitacao";
 import Template from "../components/Template";
 
 export default function listaSolicitacoes() {
@@ -33,9 +43,9 @@ export default function listaSolicitacoes() {
                   <Td>{evento.nome}</Td>
                   <Td isNumeric>
                     <Flex gap="1">
-                      <AiOutlineEye />
-                      <AiOutlineCloseCircle />
-                      <AiOutlineCheckCircle />
+                      <ModalSolicitacao evento={evento} />
+                      <AiOutlineCloseCircle cursor="pointer" />
+                      <AiOutlineCheckCircle cursor="pointer" />
                     </Flex>
                   </Td>
                 </Tr>

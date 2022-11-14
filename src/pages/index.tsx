@@ -5,7 +5,7 @@ import Template from "../components/Template";
 export default function Home() {
   return (
     <Template tituloPagina="Eventos Disponíveis">
-      <SimpleGrid columns={2} spacing={7}>
+      <SimpleGrid columns={[1, 1, 2]} spacing={7}>
         {EVENTOS.map((evento, key) => {
           return <Card evento={evento} key={key} />;
         })}
