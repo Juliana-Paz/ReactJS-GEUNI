@@ -5,7 +5,10 @@ import {
   Input,
   Select,
   Stack,
+  RadioGroup,
+  Radio,
   Box,
+  Flex,
 } from "@chakra-ui/react";
 import Template from "../components/Template";
 
@@ -18,28 +21,29 @@ export default function Inscricao() {
           <Input />
         </FormControl>
         <FormControl>
-          <FormLabel>E-mail</FormLabel>
-          <Input type="email" />
-        </FormControl>
-        <FormControl>
           <FormLabel>CPF</FormLabel>
           <Input />
         </FormControl>
-        <FormControl>
-          <FormLabel>Sexo</FormLabel>
-          <Select>
-            <option></option>
-            <option>Feminino</option>
-            <option>Masculino</option>
-            <option>Indefinido</option>
-          </Select>
+        <FormControl as="fieldset">
+          <FormLabel as="legend">Sexo</FormLabel>
+          <RadioGroup defaultValue="1">
+            <Flex gap="5">
+              <Radio value="1">Feminino</Radio>
+              <Radio value="2">Masculino</Radio>
+              <Radio value="3">Não Identificado</Radio>
+            </Flex>
+          </RadioGroup>
         </FormControl>
         <FormControl>
           <FormLabel>Data de Nascimento</FormLabel>
           <Input type="date" />
         </FormControl>
         <FormControl>
-          <FormLabel>Instituição que Representa</FormLabel>
+          <FormLabel>E-mail</FormLabel>
+          <Input type="email" />
+        </FormControl>
+        <FormControl>
+          <FormLabel>Telefone</FormLabel>
           <Input />
         </FormControl>
         <FormControl>
@@ -75,7 +79,7 @@ export default function Inscricao() {
           <Input />
         </FormControl>
         <FormControl>
-          <FormLabel>Telefone</FormLabel>
+          <FormLabel>Instituição que Representa</FormLabel>
           <Input />
         </FormControl>
         <FormControl>
@@ -84,8 +88,8 @@ export default function Inscricao() {
             <option></option>
             <option>Ouvinte</option>
             <option>Palestrante</option>
-            <option>Facilitador/mediador</option>
-            <option>Comissão organizadora</option>
+            <option>Facilitador/Mediador</option>
+            <option>Comissão Organizadora</option>
           </Select>
         </FormControl>
 

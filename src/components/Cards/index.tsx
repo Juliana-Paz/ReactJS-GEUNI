@@ -1,15 +1,17 @@
 import {
   Button,
   Center,
+  Flex,
   Heading,
   Stack,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import ModalInformacaoCard from "../ModalInformacaoCard";
 
 export default function Card({ evento }: any) {
   return (
-    <Center py={6}>
+    <Center py={4}>
       <Stack
         borderWidth="1px"
         borderRadius="lg"
@@ -32,10 +34,13 @@ export default function Card({ evento }: any) {
             {evento.nome}
           </Heading>
           <Stack spacing={0}>
+            {/* <Text fontWeight={600} color={"gray.500"} size="sm">
+              Período de Inscrição: {evento.peridoInscricao}
+            </Text> */}
             <Text fontWeight={600} color={"gray.500"} size="sm">
               Período de Inscrição
             </Text>
-            <Text fontWeight={600} color={"gray.500"} fontSize="sm">
+            <Text fontWeight={600} color={"gray.500"} size="sm">
               {evento.peridoInscricao}
             </Text>
           </Stack>
@@ -54,15 +59,16 @@ export default function Card({ evento }: any) {
             justifyContent={"space-between"}
             alignItems={"center"}
           >
+            <ModalInformacaoCard evento={evento} />
             <Button
-              flex={1}
+              w="100%"
               rounded={"full"}
               colorScheme={"blue"}
               boxShadow={
                 "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
               }
               onClick={() => {
-                window.open("/inscricao","_self");
+                window.open("/inscricao", "_self");
               }}
             >
               Inscrever-se

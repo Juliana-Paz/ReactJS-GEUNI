@@ -2,15 +2,15 @@ import {
   Box,
   chakra,
   Container,
-  Link,
   Image,
+  Link,
   Stack,
   Text,
   useColorModeValue,
   VisuallyHidden,
 } from "@chakra-ui/react";
-import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { ReactNode } from "react";
+import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Logo = () => {
   return (
@@ -26,6 +26,9 @@ const Logo = () => {
 };
 
 export default function Footer() {
+
+  const currentYear = new Date().getFullYear();
+  
   return (
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
@@ -44,25 +47,23 @@ export default function Footer() {
       >
         <Logo />
         <Text pt={6} fontSize={"sm"} textAlign={"center"}>
-          © 2022 Unitins. Todos os direitos reservados.
+          © {currentYear} Unitins. Todos os direitos reservados.
         </Text>
         <Stack direction={"row"} spacing={6}>
-          <SocialButton label={"Twitter"} href={"#"}>
-            <FaTwitter />
-          </SocialButton>
-          <SocialButton label={"YouTube"} href={"#"}>
-            <FaYoutube />
-          </SocialButton>
-          <SocialButton label={"Instagram"} href={"#"}>
-            <FaInstagram />
-          </SocialButton>
+          <SocialButton label={"Instagram"} href={"https://www.instagram.com/unitins_oficial/"}>
+              <FaInstagram />
+            </SocialButton>
+            <SocialButton label={"Twitter"} href={"https://twitter.com/unitins"}>
+              <FaTwitter />
+            </SocialButton>
+            <SocialButton label={"YouTube"} href={"https://www.youtube.com/c/UnitinsOficial/featured"}>
+              <FaYoutube />
+            </SocialButton>
         </Stack>
       </Container>
     </Box>
   );
 }
-
-// lllllllllllllllllllll
 
 const SocialButton = ({
   children,

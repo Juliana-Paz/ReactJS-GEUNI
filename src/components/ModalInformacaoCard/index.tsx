@@ -1,33 +1,42 @@
 import {
-  Button, Modal,
+  Button,
+  Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  useDisclosure
+  useDisclosure,
 } from "@chakra-ui/react";
-import { AiOutlineEye } from "react-icons/ai";
 
-export default function ModalSolicitacao({ evento }: any) {
+export default function ModalInformacaoCard({ evento }: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <AiOutlineEye onClick={onOpen} cursor="pointer" />
+      <Button
+        w="100%"
+        variant="outline"
+        rounded={"full"}
+        colorScheme={"blue"}
+        shadow="lg"
+        onClick={onOpen}
+      >
+        Informações
+      </Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+          <ModalHeader>{evento.nome}</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>{evento.nome}</ModalBody>
+          <ModalBody>Período de Inscrição: {evento.peridoInscricao}</ModalBody>
+          <ModalBody>Descrição: {evento.descricao}</ModalBody>
 
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button variant="ghost">Secondary Action</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

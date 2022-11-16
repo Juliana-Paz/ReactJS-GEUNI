@@ -14,6 +14,7 @@ export default function Template({ tituloPagina, children, isAdm=false }: any) {
           marginY="10"
           fontSize={"3xl"}
           fontFamily={"body"}
+          fontWeight="500"
         >
           {tituloPagina}
         </Heading>

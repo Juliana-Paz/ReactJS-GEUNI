@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Flex,
   FormControl,
   FormLabel,
   Input,
@@ -15,21 +16,62 @@ import {
   Stack,
   Textarea,
 } from "@chakra-ui/react";
+import DividerWithTitle from "../components/DividerWithTitle";
 import Template from "../components/Template";
 
 export default function Solicitacao() {
+  function enviar() {
+    console.log({ nome: "semana acad", modalidade: "ead" });
+    return null;
+  }
+
   return (
     <Template tituloPagina="Solicitar Evento">
       <Stack backgroundColor="gray.50" padding="16" shadow="md" width="70%">
+        <DividerWithTitle title="Dados Pessoais do Solicitante" />
         <FormControl>
-          <FormLabel>Modalidade</FormLabel>
-          <Select>
-            <option></option>
-            <option>Presencial</option>
-            <option>EAD</option>
-            <option>Híbrido</option>
-          </Select>
+          <FormLabel>Nome Completo</FormLabel>
+          <Input />
         </FormControl>
+        <FormControl>
+          <FormLabel>CPF</FormLabel>
+          <Input />
+        </FormControl>
+        <FormControl as="fieldset">
+          <FormLabel as="legend">Sexo</FormLabel>
+          <RadioGroup defaultValue="1">
+            <Flex gap="5">
+              <Radio value="1">Feminino</Radio>
+              <Radio value="2">Masculino</Radio>
+              <Radio value="3">Não Identificado</Radio>
+            </Flex>
+          </RadioGroup>
+        </FormControl>
+        <FormControl>
+          <FormLabel>Data de Nascimento</FormLabel>
+          <Input type="date" />
+        </FormControl>
+        <FormControl>
+          <FormLabel>E-mail</FormLabel>
+          <Input type="email" />
+        </FormControl>
+        <FormControl>
+          <FormLabel>Telefone</FormLabel>
+          <Input />
+        </FormControl>
+        <FormControl>
+          <FormLabel>Endereco</FormLabel>
+          <Input />
+        </FormControl>
+        <FormControl>
+          <FormLabel>Cidade</FormLabel>
+          <Input />
+        </FormControl>
+        <FormControl>
+          <FormLabel>CEP</FormLabel>
+          <Input />
+        </FormControl>
+        <DividerWithTitle title="Identificação e Apresentação do Evento" paddingTop="50px" />
         <FormControl>
           <FormLabel>Nome do Evento</FormLabel>
           <Input />
@@ -48,11 +90,48 @@ export default function Solicitacao() {
           <Input />
         </FormControl>
         <FormControl>
-          <FormLabel>Público-Alvo</FormLabel>
-          <Input />
+          <FormLabel>Certificação</FormLabel>
+          <Select>
+            <option></option>
+            <option>
+              Certificação dos participantes ouvintes e palestrantes/mediadores
+            </option>
+            <option>Certificação dos organizadores</option>
+            <option>Sem Certificação</option>
+          </Select>
         </FormControl>
         <FormControl>
-          <FormLabel>Data de Inicio do Evento</FormLabel>
+          <FormLabel>Modalidade</FormLabel>
+          <Select>
+            <option></option>
+            <option>Cine-debate</option>
+            <option>Encontro</option>
+            <option>Fórum</option>
+            <option>Colóquio</option>
+            <option>Conferência</option>
+            <option>Congresso</option>
+            <option>Mesa-redonda</option>
+            <option>Mostra</option>
+            <option>Palestra</option>
+            <option>Roda de conversa</option>
+            <option>Seminário</option>
+            <option>Simpósio</option>
+            <option>Talk show</option>
+            <option>Workshop</option>
+          </Select>
+        </FormControl>
+        <DividerWithTitle title="Dados Específicos do Evento" paddingTop="50px" />
+        <FormControl>
+          <FormLabel>Público-Alvo</FormLabel>
+          <Select>
+            <option></option>
+            <option>Comunidade Interna</option>
+            <option>Comunidade Externa</option>
+            <option>Comunidade Interna e Extera</option>
+          </Select>
+        </FormControl>
+        <FormControl>
+          <FormLabel>Data de Início do Evento</FormLabel>
           <Input type="date" />
         </FormControl>
         <FormControl>
@@ -69,7 +148,7 @@ export default function Solicitacao() {
         </FormControl>
         <FormControl>
           <FormLabel>Quantidade de Vagas</FormLabel>
-          <NumberInput max={1000} min={10}>
+          <NumberInput max={10000} min={10}>
             <NumberInputField />
             <NumberInputStepper>
               <NumberIncrementStepper />
@@ -82,24 +161,12 @@ export default function Solicitacao() {
           <Input />
         </FormControl>
         <FormControl>
-          <FormLabel>Carga Horária Geral do Evento/</FormLabel>
+          <FormLabel>Carga Horária Geral do Evento</FormLabel>
           <Input />
-        </FormControl>
-        <FormControl as="fieldset">
-          <FormLabel as="legend">Certificação</FormLabel>
-          <RadioGroup defaultValue="1">
-            <Stack spacing="0">
-              <Radio value="1">
-                Certificação dos participantes ouvintes e
-                palestrantes/mediadores
-              </Radio>
-              <Radio value="2">Certificação dos organizadores</Radio>
-            </Stack>
-          </RadioGroup>
         </FormControl>
 
         <Box paddingY="10">
-          <Button colorScheme={"blue"} size="md" width="100%">
+          <Button colorScheme={"blue"} size="md" width="100%" onClick={enviar}>
             Solicitar
           </Button>
         </Box>

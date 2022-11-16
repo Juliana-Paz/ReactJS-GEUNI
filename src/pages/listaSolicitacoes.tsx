@@ -1,12 +1,5 @@
 import {
   Flex,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
   Table,
   TableContainer,
   Tbody,
@@ -14,14 +7,8 @@ import {
   Th,
   Thead,
   Tr,
-  useDisclosure,
-  Button,
 } from "@chakra-ui/react";
-import {
-  AiOutlineCheckCircle,
-  AiOutlineCloseCircle,
-  AiOutlineEye,
-} from "react-icons/ai";
+import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
 import ModalSolicitacao from "../components/ModalSolicitacao";
 import Template from "../components/Template";
 
