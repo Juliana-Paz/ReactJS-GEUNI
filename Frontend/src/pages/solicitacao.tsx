@@ -139,11 +139,11 @@ export default function Solicitacao() {
           <Input type="date" />
         </FormControl>
         <FormControl>
-          <FormLabel>Data de Inicio de Início das Inscrições</FormLabel>
+          <FormLabel>Data de Início das Inscrições</FormLabel>
           <Input type="date" />
         </FormControl>
         <FormControl>
-          <FormLabel>Data de Final das Inscrições </FormLabel>
+          <FormLabel>Data Final das Inscrições </FormLabel>
           <Input type="date" />
         </FormControl>
         <FormControl>
