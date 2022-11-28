@@ -13,3 +13,5 @@ Este é um projeto de **Gerenciamento de Eventos Acadêmicos** desenvolvido para
 
 ### Banco de Dados: 
 - PostgreSQL.
+
+<img src="https://img.shields.io/badge/-React.Js-02569B?logo=reactjs&logoColor=blue&style=flat-square&logoWidth=30" alt="Flutter" height="30"/>
