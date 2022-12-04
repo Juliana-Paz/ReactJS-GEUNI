@@ -34,6 +34,7 @@ export default function ModalInformacaoCard({ evento }: any) {
         onClose={onClose}
         isCentered
         scrollBehavior="inside"
+        size="lg"
       >
         <ModalOverlay />
         <ModalContent>

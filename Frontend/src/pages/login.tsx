@@ -8,12 +8,12 @@ import {
   InputLeftElement,
   Link,
   Stack,
-  Text,
+  Text
 } from "@chakra-ui/react";
-import { FaUserAlt } from "react-icons/fa";
-import { RiLockPasswordFill } from "react-icons/ri";
-import { MdArrowBackIosNew } from "react-icons/md";
 import { useState } from "react";
+import { FaUserAlt } from "react-icons/fa";
+import { MdArrowBackIosNew } from "react-icons/md";
+import { RiLockPasswordFill } from "react-icons/ri";
 
 const currentYear = new Date().getFullYear();
 
@@ -40,7 +40,10 @@ export default function Login() {
       h="100%"
       justifyContent="center"
     >
-      <MdArrowBackIosNew color="#E2E8F0" />
+      <Flex position="fixed" top="15px" left="15px" alignItems="center" cursor="pointer" gap="2" onClick={() => history.back()}>
+        <MdArrowBackIosNew color="#E2E8F0" size="18px" />
+        <Text color="white" fontSize="16px" pt="1px">Voltar</Text>
+      </Flex>
       <Stack alignItems="center">
         <Stack
           borderRadius="5px"

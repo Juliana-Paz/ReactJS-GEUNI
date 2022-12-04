@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import {
+  Button,
   Flex,
   Table,
   TableContainer,
@@ -6,24 +8,49 @@ import {
   Td,
   Th,
   Thead,
-  Tr
+  Tr,
+  useToast,
 } from "@chakra-ui/react";
-import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
 import ModalSolicitacao from "../components/ModalSolicitacao";
 import Template from "../components/Template";
-import { useState } from "react";
 
 export default function listaSolicitacoes() {
+  const toast = useToast();
 
-  const negarSolicitacao = () => {
+  const negarSolicitacao = (id: any) => {
+    console.log(id);
+    toast({
+      title: "Solicitação Negada.",
+      description: "A solicitação do evento foi negada.",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+      variant: 'left-accent',
+      position: 'top-right',
+    });
   };
 
-  const aprovarSolicitacao = () => {
+  const aprovarSolicitacao = (id: any) => {
+    console.log(id);
+    toast({
+      title: "Solicitação Aprovada",
+      description: "A solicitação do evento foi aprovada.",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+      variant: 'left-accent',
+      position: 'top-right',
+    });
   };
 
   return (
     <Template tituloPagina="Lista de Solicitações" isAdm={true}>
-      <TableContainer>
+      <TableContainer
+        backgroundColor="gray.50"
+        padding="16"
+        shadow="md"
+        width="70%"
+      >
         <Table variant="simple">
           <Thead>
             <Tr>
@@ -39,8 +66,22 @@ export default function listaSolicitacoes() {
                   <Td isNumeric>
                     <Flex gap="1">
                       <ModalSolicitacao evento={evento} />
-                      <AiOutlineCloseCircle cursor="pointer" onClick={negarSolicitacao} />
-                      <AiOutlineCheckCircle cursor="pointer" onClick={aprovarSolicitacao} />
+                      <Button
+                        colorScheme="red"
+                        size="xs"
+                        onClick={() => negarSolicitacao(evento.id)}
+                      >
+                        Negar
+                      </Button>
+                      <Button
+                        colorScheme="green"
+                        size="xs"
+                        onClick={() => {
+                          aprovarSolicitacao(evento.id);                          
+                        }}
+                      >
+                        Aceitar
+                      </Button>
                     </Flex>
                   </Td>
                 </Tr>

@@ -19,7 +19,7 @@ export default function Indisponivel() {
             Disponível em Breve!
           </AlertTitle>
           <AlertDescription maxWidth="sm">
-            Ainda estamos trabalhando no desenvolvimento dessa funcionalidade, mas já já está no ar. Obrigado pela compreensão!
+            Ainda estamos trabalhando no desenvolvimento dessa funcionalidade, mas já já estará no ar. Obrigado pela compreensão!
           </AlertDescription>
         </Alert>
       </Box>
