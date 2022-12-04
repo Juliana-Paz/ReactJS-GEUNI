@@ -1,7 +1,6 @@
 import {
   Button,
   Center,
-  Flex,
   Heading,
   Stack,
   Text,
@@ -41,7 +40,7 @@ export default function Card({ evento }: any) {
               Período de Inscrição
             </Text>
             <Text fontWeight={600} color={"gray.500"} size="sm">
-              {evento.peridoInscricao}
+              {evento.periodoInscricao}
             </Text>
           </Stack>
           <Text
@@ -68,7 +67,7 @@ export default function Card({ evento }: any) {
                 "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
               }
               onClick={() => {
-                window.open("/inscricao", "_self");
+                window.open("/formInscricao");
               }}
             >
               Inscrever-se

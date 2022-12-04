@@ -39,7 +39,7 @@ export default function Navbar({ isAdm }: any) {
         align={"center"}
         width="100%"
         justifyContent="space-between"
-        paddingLeft="28"
+        paddingLeft="20%"
       >
         <DesktopNav isAdm={isAdm} />
 
@@ -138,12 +138,20 @@ const DesktopNav = ({ isAdm }: any) => {
 
 const NAV_ITEMS = [
   {
-    label: "Eventos Disponíveis",
+    label: "Inscrever em Eventos",
     href: "/",
   },
   {
+    label: "Registrar Frequência",
+    href: "/registrarFrequencia",
+  },
+  {
+    label: "Emitir Certificado",
+    href: "/emitirCertificado",
+  },
+  {
     label: "Solicitar Evento",
-    href: "/solicitacao",
+    href: "/formSolicitacao",
   },
 ];
 
@@ -151,5 +159,9 @@ const ADM_NAV_ITEMS = [
   {
     label: "Lista de Solicitações",
     href: "/listaSolicitacoes",
+  },
+  {
+    label: "Lista de Inscricões",
+    href: "/listaInscricoes",
   },
 ];

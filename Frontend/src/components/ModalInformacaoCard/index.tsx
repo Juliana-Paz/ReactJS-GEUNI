@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Modal,
   ModalBody,
@@ -7,6 +8,9 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  SimpleGrid,
+  Stack,
+  Text,
   useDisclosure,
 } from "@chakra-ui/react";
 
@@ -25,17 +29,73 @@ export default function ModalInformacaoCard({ evento }: any) {
         Informações
       </Button>
 
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal
+        isOpen={isOpen}
+        onClose={onClose}
+        isCentered
+        scrollBehavior="inside"
+      >
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>{evento.nome}</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>Período de Inscrição: {evento.peridoInscricao}</ModalBody>
-          <ModalBody>Descrição: {evento.descricao}</ModalBody>
-
+          <ModalBody>
+            <Stack spacing={4}>
+              <SimpleGrid minChildWidth="140px" spacing="15px">
+                <Box>
+                  <Text fontWeight={600} color={"gray.700"} size="sm">
+                    Período de Inscrição
+                  </Text>
+                  <Text>{evento.periodoInscricao}</Text>
+                </Box>
+                <Box>
+                  <Text fontWeight={600} color={"gray.700"} size="sm">
+                    Período de Realização
+                  </Text>
+                  <Text>{evento.periodoRealizacao}</Text>
+                </Box>
+                <Box>
+                  <Text fontWeight={600} color={"gray.700"} size="sm">
+                    Quantidade de Vagas
+                  </Text>
+                  <Text>{evento.quantidadeVagas}</Text>
+                </Box>
+                <Box>
+                  <Text fontWeight={600} color={"gray.700"} size="sm">
+                    Público Alvo
+                  </Text>
+                  <Text>{evento.publicoAlvo}</Text>
+                </Box>
+                <Box>
+                  <Text fontWeight={600} color={"gray.700"} size="sm">
+                    Carga Horária
+                  </Text>
+                  <Text>{evento.cargaHoraria}</Text>
+                </Box>
+                <Box>
+                  <Text fontWeight={600} color={"gray.700"} size="sm">
+                    Possui Certificação?
+                  </Text>
+                  <Text>{evento.certificacao}</Text>
+                </Box>
+              </SimpleGrid>
+                <Box>
+                  <Text fontWeight={600} color={"gray.700"} size="sm">
+                    Objetivo Geral do Evento
+                  </Text>
+                  <Text>{evento.objetivoGeral}</Text>
+                </Box>
+                <Box>
+                  <Text fontWeight={600} color={"gray.700"} size="sm">
+                    Descrição
+                  </Text>
+                  <Text>{evento.descricao}</Text>
+                </Box>
+            </Stack>
+          </ModalBody>
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
-              Close
+            <Button colorScheme="blue" onClick={onClose}>
+              Fechar
             </Button>
           </ModalFooter>
         </ModalContent>

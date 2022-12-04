@@ -1,6 +1,8 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import {
   Box,
   Button,
+  Divider,
   Flex,
   FormControl,
   FormLabel,
@@ -8,12 +10,13 @@ import {
   Radio,
   RadioGroup,
   Select,
-  Stack
+  Stack,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import Template from "../components/Template";
 
-export default function Inscricao() {
+export default function formInscricao({ evento }: any) {
   const [nomeCompleto, setNomeCompleto] = useState("");
   const [cpf, setCpf] = useState("");
   const [sexo, setSexo] = useState("");
@@ -34,7 +37,7 @@ export default function Inscricao() {
       nomeCompleto: nomeCompleto,
       cpf: cpf,
       sexo: sexo,
-      dataNascimento : dataNascimento,
+      dataNascimento: dataNascimento,
       email: email,
       telefone: telefone,
       endereco: endereco,
@@ -49,9 +52,29 @@ export default function Inscricao() {
     console.log(pessoa);
   };
 
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Template tituloPagina="Inscrever em Evento">
-      <Stack backgroundColor="gray.50" padding="16" shadow="md" width="70%">
+      <Stack
+        spacing={4}
+        backgroundColor="gray.50"
+        padding="16"
+        shadow="md"
+        width="70%"
+      >
+        <Flex justifyContent={"space-between"}>
+          <Button
+            size="sm"
+            variant="outline"
+            colorScheme="blackAlpha"
+            shadow="lg"
+            onClick={onOpen}
+          >
+            Informações
+          </Button>
+          <Divider />
+        </Flex>
         <FormControl>
           <FormLabel>Nome Completo</FormLabel>
           <Input onChange={(e) => setNomeCompleto(e.target.value)} />

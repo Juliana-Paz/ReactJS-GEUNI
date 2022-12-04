@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import {
   Box,
   Button,
@@ -19,7 +20,7 @@ import { useState } from "react";
 import DividerWithTitle from "../components/DividerWithTitle";
 import Template from "../components/Template";
 
-export default function Solicitacao() {
+export default function formSolicitacao() {
   const [nomePessoa, setNomePessoa] = useState("");
   const [cpf, setCpf] = useState("");
   const [sexo, setSexo] = useState("");
