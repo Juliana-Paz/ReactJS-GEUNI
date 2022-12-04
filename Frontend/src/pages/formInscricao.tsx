@@ -33,7 +33,7 @@ export default function formInscricao({ evento }: any) {
   const [modaliParti, setModaliParti] = useState("");
 
   const inscrever = () => {
-    const pessoa = {
+    const usuario = {
       nomeCompleto: nomeCompleto,
       cpf: cpf,
       sexo: sexo,
@@ -49,7 +49,7 @@ export default function formInscricao({ evento }: any) {
       instituRepre: instituRepre,
       modaliParti: modaliParti,
     };
-    console.log(pessoa);
+    console.log(usuario);
   };
 
   const { isOpen, onOpen, onClose } = useDisclosure();

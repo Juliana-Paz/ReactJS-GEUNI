@@ -13,10 +13,23 @@ import {
 import { FaUserAlt } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { MdArrowBackIosNew } from "react-icons/md";
+import { useState } from "react";
 
 const currentYear = new Date().getFullYear();
 
-export default function Inscricao() {
+export default function Login() {
+
+  const [login, setLogin] = useState("");
+  const [senha, setSenha] = useState("");
+
+  const logar = () => {
+    const usuario = {
+      login: login,
+      senha: senha,
+    };
+    console.log(usuario);
+  };
+
   return (
     <Stack
       backgroundImage="url('https://www.unitins.br/PortalAluno/Content/img/bg-login-web.jpg')"
@@ -56,13 +69,13 @@ export default function Inscricao() {
             <InputLeftElement pointerEvents="none">
               <FaUserAlt color="#E2E8F0" />
             </InputLeftElement>
-            <Input variant='flushed' type="eamil" placeholder="Login" />
+            <Input variant='flushed' type="eamil" placeholder="Login" onChange={(e) => setLogin(e.target.value)}/>
           </InputGroup>
           <InputGroup>
             <InputLeftElement pointerEvents="none">
               <RiLockPasswordFill color="#E2E8F0" />
             </InputLeftElement>
-            <Input variant='flushed' type="password" placeholder="Senha" />
+            <Input variant='flushed' type="password" placeholder="Senha" onChange={(e) => setSenha(e.target.value)} />
           </InputGroup>
           <Box>
             <Button
@@ -75,7 +88,8 @@ export default function Inscricao() {
               size="md"
               width="100%"
               onClick={() => {
-                window.open("/listaSolicitacoes", "_self");
+                logar()
+                window.open("/listaSolicitacoes", "_self")
               }}
             >
               Logar

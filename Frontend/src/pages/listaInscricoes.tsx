@@ -6,7 +6,7 @@ import Template from "../components/Template";
 
 export default function listaInscricoes() {
   return (
-    <Template tituloPagina="Solicitações de Inscrições" isAdm={true}>
+    <Template tituloPagina="Lista de Inscrições" isAdm={true}>
       <Box minHeight="30vh">
         <Indisponivel />
       </Box>
