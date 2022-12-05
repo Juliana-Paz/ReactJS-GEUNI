@@ -11,7 +11,6 @@ import {
   useDisclosure
 } from "@chakra-ui/react";
 import { useState } from "react";
-import Divider from "../components/Divider";
 import Indisponivel from "../components/Indisponivel";
 import Template from "../components/Template";
 

@@ -5,7 +5,8 @@
 ### Este é um projeto de Gerenciamento de Eventos Acadêmicos desenvolvido para a disciplina de Projeto Integrador da Universidade Estadual do Tocantins - UNITINS.
 #
 
-### - 🖼️ Link da Aplicação: [https://geuni-eosin.vercel.app/](https://geuni-eosin.vercel.app/)
+### - 🖼️ Link da Aplicação: [https://unitins-geuni.vercel.app/](https://unitins-geuni.vercel.app/)
+![image](https://user-images.githubusercontent.com/79279766/205524149-c1a7fa5e-b203-4939-8f67-cde0d5f572d3.png)
 
 <hr/>
 
@@ -26,5 +27,4 @@
 
 <hr/>
 
-### - 🖼️ Link da Aplicação: [https://geuni-eosin.vercel.app/](https://geuni-eosin.vercel.app/)
-=======
+### - 🖼️ Link da Aplicação: [https://unitins-geuni.vercel.app/](https://unitins-geuni.vercel.app/)
