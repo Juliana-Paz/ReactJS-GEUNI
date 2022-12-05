@@ -84,9 +84,4 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
-
-<<<<<<< HEAD
 </project>
-=======
-</project>
->>>>>>> 62a8825bd69a90727e642f7c4ce693c33d7522fc
