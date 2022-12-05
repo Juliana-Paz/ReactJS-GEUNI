@@ -58,7 +58,14 @@ export default function Card({ evento }: any) {
             justifyContent={"space-between"}
             alignItems={"center"}
           >
-            <ModalInformacaoCard evento={evento} />
+            <ModalInformacaoCard
+              evento={evento}
+              w="100%"
+              variant="outline"
+              rounded={"full"}
+              colorScheme={"blue"}
+              shadow="lg"
+            />
             <Button
               w="100%"
               rounded={"full"}
@@ -67,7 +74,7 @@ export default function Card({ evento }: any) {
                 "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
               }
               onClick={() => {
-                window.open("/formInscricao");
+                window.open(`/formInscricao/?id=${evento.id}`);
               }}
             >
               Inscrever-se

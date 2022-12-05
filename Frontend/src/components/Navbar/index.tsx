@@ -39,8 +39,9 @@ export default function Navbar({ isAdm }: any) {
         align={"center"}
         width="100%"
         justifyContent="space-between"
-        paddingLeft="20%"
       >
+        <Box w="90.7px"/>
+
         <DesktopNav isAdm={isAdm} />
 
         <Stack

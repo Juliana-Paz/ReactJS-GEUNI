@@ -74,7 +74,7 @@ export default function formSolicitacao() {
 
   return (
     <Template tituloPagina="Solicitar Evento">
-      <Stack backgroundColor="gray.50" padding="16" shadow="md" width="70%">
+      <Stack spacing={5} backgroundColor="gray.50" padding="16" shadow="md" width="70%">
         <DividerWithTitle title="Dados Pessoais do Solicitante" />
         <FormControl>
           <FormLabel>Nome Completo</FormLabel>

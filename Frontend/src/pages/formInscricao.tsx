@@ -11,12 +11,22 @@ import {
   RadioGroup,
   Select,
   Stack,
+  Text,
   useDisclosure,
+  useToast
 } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import { useState } from "react";
+import ModalInformacaoCard from "../components/ModalInformacaoCard";
 import Template from "../components/Template";
+import { EVENTOS } from "../mock/eventos";
 
-export default function formInscricao({ evento }: any) {
+export default function formInscricao() {
+  
+  const router = useRouter();
+
+  const evento = EVENTOS.find((ev) => ev.id === router.query.id);
+
   const [nomeCompleto, setNomeCompleto] = useState("");
   const [cpf, setCpf] = useState("");
   const [sexo, setSexo] = useState("");
@@ -53,28 +63,33 @@ export default function formInscricao({ evento }: any) {
   };
 
   const { isOpen, onOpen, onClose } = useDisclosure();
-
   return (
-    <Template tituloPagina="Inscrever em Evento">
+    <Template tituloPagina="Formulário de Inscrição">
       <Stack
-        spacing={4}
+        spacing={5}
         backgroundColor="gray.50"
         padding="16"
         shadow="md"
         width="70%"
       >
-        <Flex justifyContent={"space-between"}>
-          <Button
-            size="sm"
-            variant="outline"
-            colorScheme="blackAlpha"
-            shadow="lg"
-            onClick={onOpen}
-          >
-            Informações
-          </Button>
-          <Divider />
+        <Flex justifyContent="space-between" alignItems="center">
+          <Box w="89.36px" />
+          <Box>
+            <Text textAlign="center" fontSize={"1.3rem"} fontWeight="500">
+              {evento?.nome}
+            </Text>
+          </Box>
+          <Box>
+            <ModalInformacaoCard
+              evento={evento}
+              size="xs"
+              variant="outline"
+              colorScheme="blue"
+              onClick={onOpen}
+            />
+          </Box>
         </Flex>
+        <Divider borderColor="gray.200" borderBottomWidth="1px" shadow="sm" />
         <FormControl>
           <FormLabel>Nome Completo</FormLabel>
           <Input onChange={(e) => setNomeCompleto(e.target.value)} />
@@ -160,7 +175,9 @@ export default function formInscricao({ evento }: any) {
             colorScheme={"blue"}
             size="md"
             width="100%"
-            onClick={inscrever}
+            onClick={() => 
+              inscrever()              
+            }
           >
             Inscrever
           </Button>

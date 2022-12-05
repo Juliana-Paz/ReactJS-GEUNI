@@ -14,16 +14,17 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
-export default function ModalInformacaoCard({ evento }: any) {
+export default function ModalInformacaoCard({ evento, ...props }: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
       <Button
-        w="100%"
-        variant="outline"
-        rounded={"full"}
-        colorScheme={"blue"}
-        shadow="lg"
+        // w="100%"
+        // variant="outline"
+        // rounded={"full"}
+        // colorScheme={"blue"}
+        // shadow="lg"
+        {...props}
         onClick={onOpen}
       >
         Informações
@@ -38,7 +39,7 @@ export default function ModalInformacaoCard({ evento }: any) {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>{evento.nome}</ModalHeader>
+          <ModalHeader>{evento?.nome}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Stack spacing={4}>
@@ -47,50 +48,50 @@ export default function ModalInformacaoCard({ evento }: any) {
                   <Text fontWeight={600} color={"gray.700"} size="sm">
                     Período de Inscrição
                   </Text>
-                  <Text>{evento.periodoInscricao}</Text>
+                  <Text>{evento?.periodoInscricao}</Text>
                 </Box>
                 <Box>
                   <Text fontWeight={600} color={"gray.700"} size="sm">
                     Período de Realização
                   </Text>
-                  <Text>{evento.periodoRealizacao}</Text>
+                  <Text>{evento?.periodoRealizacao}</Text>
                 </Box>
                 <Box>
                   <Text fontWeight={600} color={"gray.700"} size="sm">
                     Quantidade de Vagas
                   </Text>
-                  <Text>{evento.quantidadeVagas}</Text>
+                  <Text>{evento?.quantidadeVagas}</Text>
                 </Box>
                 <Box>
                   <Text fontWeight={600} color={"gray.700"} size="sm">
                     Público Alvo
                   </Text>
-                  <Text>{evento.publicoAlvo}</Text>
+                  <Text>{evento?.publicoAlvo}</Text>
                 </Box>
                 <Box>
                   <Text fontWeight={600} color={"gray.700"} size="sm">
                     Carga Horária
                   </Text>
-                  <Text>{evento.cargaHoraria}</Text>
+                  <Text>{evento?.cargaHoraria}</Text>
                 </Box>
                 <Box>
                   <Text fontWeight={600} color={"gray.700"} size="sm">
                     Possui Certificação?
                   </Text>
-                  <Text>{evento.certificacao}</Text>
+                  <Text>{evento?.certificacao}</Text>
                 </Box>
               </SimpleGrid>
                 <Box>
                   <Text fontWeight={600} color={"gray.700"} size="sm">
                     Objetivo Geral do Evento
                   </Text>
-                  <Text>{evento.objetivoGeral}</Text>
+                  <Text>{evento?.objetivoGeral}</Text>
                 </Box>
                 <Box>
                   <Text fontWeight={600} color={"gray.700"} size="sm">
                     Descrição
                   </Text>
-                  <Text>{evento.descricao}</Text>
+                  <Text>{evento?.descricao}</Text>
                 </Box>
             </Stack>
           </ModalBody>

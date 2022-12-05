@@ -18,7 +18,7 @@ export default function ModalSolicitacao({ evento }: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Button colorScheme='telegram' size='xs' onClick={onOpen}>Detalhes</Button>
+      <Button roundedRight="none" colorScheme='telegram' size='xs' onClick={onOpen}>Detalhes</Button>
 
       <Modal
         isOpen={isOpen}

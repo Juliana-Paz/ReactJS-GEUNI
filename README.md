@@ -11,7 +11,6 @@
 <hr/>
 
 <br/>
-<br/>
 
 ## Tecnologias utilizadas no projeto:
 ### Front-End:
